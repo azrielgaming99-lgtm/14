@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengulangan Angka</title>
+</head>
+<body>
+    <h2>Form Pengulangan Angka</h2>
+    <form onsubmit="return prosesAngka()">
+        <label>Masukkan Nilai Angka:</label><br>
+        <input type="number" id="angka" required>
+        <br><br>
+        <button type="submit">Proses</button>
+    </form>
+    <h3>Hasil:</h3>
+    <div id="hasil"></div>
+    <script>
+        function prosesAngka() {
+            let n = document.getElementById("angka").value;
+            let output = "";
+
+            for (let i = 1; i <= n; i++) {
+                if (i % 15 === 0) {
+                    output += "WEB<br>";
+                } else if (i % 3 === 0) {
+                    output += "TI<br>";
+                } else if (i % 5 === 0) {
+                    output += "Unindra<br>";
+                } else {
+                    output += i + "<br>";
+                }
+            }
+            document.getElementById("hasil").innerHTML = output;
+            return false; 
+        }
+    </script>
+</body>
+</html>
